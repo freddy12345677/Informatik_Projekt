@@ -19,6 +19,7 @@ public class PlayerMovement {
 
 
 	public PlayerMovement() {
+		ShotMovement shot = new ShotMovement();
 		movement = new Timer();
 		movement.scheduleAtFixedRate(new TimerTask() {
 			@Override
@@ -50,7 +51,7 @@ public class PlayerMovement {
 						Var.movementdetected = 1;
 					}
 				}else{Var.movementdetected = 0;}
-				
+				shot.tick();
 			}
 
 		}, 0, 10);

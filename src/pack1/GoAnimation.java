@@ -5,25 +5,30 @@ import java.util.TimerTask;
 
 public class GoAnimation {
 	Timer t;
-	private double temp = 1;
-	
-	public  GoAnimation() {
+	private double temp = 0;
+
+	public GoAnimation() {
 		t = new Timer();
 		t.scheduleAtFixedRate(new TimerTask() {
 			@Override
-			public void run() {
-				if (temp ==0) {
-			Var.dustanimation=0;
-			temp++;}
-		else if(temp==1) {
-			Var.dustanimation=1;
-			temp--;
 			
-		}
-		
+			public void run() {
+				
+					if (temp == 0) {
+						Var.shot = 0;
+						System.out.println("awiduhapusd");
+						temp++;
+					} else if (temp == 1) {
+						Var.shot = 1;
+						temp--;
+						System.out.println("awiduhapusd");
+
+					}
+				
 			}
 			
-		},0,200);
+
+		}, 0, 2);
 	}
 
 }

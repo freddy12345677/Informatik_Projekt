@@ -1,7 +1,5 @@
 package pack1;
 
-
-
 public class Main {
 
 	public static void main(String[] args) {
@@ -11,11 +9,13 @@ public class Main {
 		new Label();
 		new PlayerMovement();
 		new GoAnimation();
+
 		new MusicAndSounds();
-		new MouseListener();
-		
-		
-		
+
+		while (true) {
+			System.out.println(Var.shoot);
+			
+		}
 
 	}
 
