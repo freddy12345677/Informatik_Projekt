@@ -4,18 +4,23 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class ShotMovement {
-	Timer movement;
+	Timer t;
+	private double temp = 0;
 
-	public ShotMovement() {}
-		
-	public void tick() {
-		if (Var.shot == 1) {
-
-			Var.shotX += Var.movespeed;
+	public ShotMovement() {
+		t = new Timer();
+		t.scheduleAtFixedRate(new TimerTask() {
+			@Override
+			
+			public void run() {
+				
+					Var.shotX = Var.shotX + Var.ShotVelX;
+					Var.shotY = Var.shotY + Var.ShotVelX;
+				
+			}
 			
 
-		}
-
+		}, 0, 2);
 	}
 		
 	

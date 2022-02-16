@@ -51,7 +51,7 @@ public class PlayerMovement {
 						Var.movementdetected = 1;
 					}
 				}else{Var.movementdetected = 0;}
-				shot.tick();
+				
 			}
 
 		}, 0, 10);

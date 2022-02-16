@@ -20,7 +20,7 @@ public class GoAnimation {
 						temp++;
 					} else if (temp == 1) {
 						Var.shot = 1;
-						temp--;
+						temp--; 
 						System.out.println("awiduhapusd");
 
 					}

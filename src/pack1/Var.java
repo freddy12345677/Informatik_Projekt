@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class Var {
+	
 	static JFrame jf1;
 	static int screenWidth = 1920;
 	static int screenHeight = 1080;
@@ -25,18 +26,29 @@ public class Var {
 	static int shot;
 	
 	
-	static int shotX;
-	static int shotY;
+	static double shotX = 1000;
+	static double shotY = 500;
+	public static double getAngle() {
+		return Math.toRadians(-Math.toDegrees(Math.atan2((1090 - MouseInfo.getPointerInfo().getLocation().y) - (1090 - Var.y),MouseInfo.getPointerInfo().getLocation().x - Var.x)))- 44.9;
+	}
+	
+	public static double getShotVelX() {
+		return Math.sin(getAngle());
+	}
+    static double ShotVelX = getShotVelX();
+	
+	public static double getShotVelY() {
+		return Math.cos(getAngle());
+	}
+	static double ShotVelY = getShotVelY();
+    
 	
 	static int movementdetected=0;
 	//verschiedene Waffen:
 	Weapons ak = new Weapons("ak-47",35,10);
 	Weapons m4a1 = new Weapons("M4A1",28,20);
 	//
-	public double map(MouseInfo.getPointerInfo().getLocation().x, double in_min, double in_max, double out_min, double out_max)
-	{
-	  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
-	}
+	
 	//
 
 	
@@ -52,6 +64,7 @@ public class Var {
 	static BufferedImage idust1 ;
 	static BufferedImage iglock18;
 	static BufferedImage ishot;
+	static BufferedImage ibullet;
 	public Var() {
 		try {
 			ib1 = ImageIO.read(new File("b1.jpg"));
@@ -59,6 +72,7 @@ public class Var {
 			iplayer = ImageIO.read(new File("player1.png"));
 			idust1 = ImageIO.read(new File("dreck.png"));
 			iglock18 = ImageIO.read(new File("glock18.png"));
+			ibullet = ImageIO.read(new File("bullet.jpg"));
 			
 			
 			
